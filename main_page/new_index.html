@@ -13,31 +13,31 @@
 
 <body>
 	<section id="game-select">
-		<h1 id="title-text">WELCOME TO PONG!</h1>
-		<div class="button-container">
-			<button id="2d-pong" class="button">
+		<h1 id="welcome-title" class="title-text">WELCOME TO PONG!</h1>
+		<div class="button-container" style="margin-bottom: 2vw;">
+			<button id="2d-pong-btn" class="button">
 				<img src="./img/2d-pong.png" alt="2d image">
-				<span class="text">2D Pong</span>
+				<span id="2d-pong" class="text">2D Pong</span>
 			</button>
 
-			<button id="3d-pong" class="button2">
+			<button id="3d-pong-btn" class="button2">
 				<img src="./img/3d-pong.png" alt="3d image">
-				<span class="text">3D Pong</span>
+				<span id="3d-pong" class="text">3D Pong</span>
 			</button>
 		</div>
 	</section>
 
-	<section id="mode-select" style="display: none;">
-		<h1 id="title-text">SELECT YOUR GAME MODE</h1>
+	<section id="2d-mode-select" style="display: none;">
+		<h1 id="2d-mode-select-title" class="title-text">SELECT YOUR GAME MODE</h1>
 		<div class="button-container">
-			<button id="1V1" class="button">
-				<img src="./img/fist-bump.png" alt="2d image">
-				<span class="text">1V1</span>
+			<button id="1V1-btn" class="button">
+				<img src="./img/fist-bump.png">
+				<span id="1V1" class="text">1V1</span>
 			</button>
 
-			<button id="tournament" class="button2">
-				<img src="./img/Trophy-icon.png" alt="2d image">
-				<span class="text">Tournament</span>
+			<button id="tournament-btn" class="button2">
+				<img src="./img/Trophy-icon.png">
+				<span id="tournament" class="text">Tournament</span>
 			</button>
 		</div>
 		<button id="back-button">Go Back</button>
