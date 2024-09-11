@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: red;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}

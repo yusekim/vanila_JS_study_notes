@@ -67,7 +67,7 @@ const translations = {
       threeDPong: "입체 Pong",
   },
   ja: {
-      welcome: "Pongへようこそ！",
+      welcome: "Pongへようこそ!",
       twoDPong: "平面 Pong",
       threeDPong: "立体 Pong",
   }

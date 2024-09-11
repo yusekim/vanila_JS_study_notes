@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pong Pong Valley</title>
+	<link rel="stylesheet" href="new_style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+	<section id="game-select">
+		<h1 id="title-text">WELCOME TO PONG!</h1>
+		<div class="button-container">
+			<button id="2d-pong" class="button">
+				<img src="./img/2d-pong.png" alt="2d image">
+				<span class="text">2D Pong</span>
+			</button>
+
+			<button id="3d-pong" class="button2">
+				<img src="./img/3d-pong.png" alt="3d image">
+				<span class="text">3D Pong</span>
+			</button>
+		</div>
+	</section>
+
+	<section id="mode-select" style="display: none;">
+		<h1 id="title-text">SELECT YOUR GAME MODE</h1>
+		<div class="button-container">
+			<button id="1V1" class="button">
+				<img src="./img/fist-bump.png" alt="2d image">
+				<span class="text">1V1</span>
+			</button>
+
+			<button id="tournament" class="button2">
+				<img src="./img/Trophy-icon.png" alt="2d image">
+				<span class="text">Tournament</span>
+			</button>
+		</div>
+		<button id="back-button">Go Back</button>
+	</section>
+
+	<div>
+		<img id="globe-icon" src="./img/globe-icon.png" alt="language-icon">
+		<div id="language-options" style="display: none;">
+			<button class="lang-btn" data-lang="en"><span class="text" style="font-size: 20px;">Eng</span></button>
+			<button class="lang-btn" data-lang="ko"><span class="text" style="font-size: 20px;">Kor</span></button>
+			<button class="lang-btn" data-lang="ja"><span class="text" style="font-size: 20px;">Jpn</span></button>
+		</div>
+	</div>
+
+	<script src="new_script.js"></script>
+</body>
+</html>

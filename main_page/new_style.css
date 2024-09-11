@@ -1,0 +1,129 @@
+body {
+	font-family: "Jaro", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
+	background-color: whitesmoke;
+}
+
+#title-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 0;
+	margin-bottom: 2vw;
+	letter-spacing: 4px;
+	font-size: clamp(48px, 5vw, 100px); /* 최소 16px, 기본 화면 너비의 5%, 최대 48px */
+    /* font-size: 5vw; 화면 너비의 5%에 해당하는 크기로 조정 */
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.button, .button2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 500px;
+	padding: 20px 20px;
+	margin: 0 3vw;
+	border: none;
+	border-radius: 24px;
+	cursor: pointer;
+	transition: color 0.4s ease;
+}
+
+.text {
+	font-size: clamp(50px, 3vw, 100px);
+	font-family: 'Jaro';
+}
+
+.button img, .button2 img {
+	width: 100%;
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 512px;
+	max-height: 512px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+}
+
+.button {
+	background-color: #89d8f7;
+	color: #fff;
+}
+
+.button:hover {
+	background-color: #A6E1F9;
+	color: #000;
+}
+
+.button2 {
+	background-color: #fc9393;
+	color: #fff;
+}
+
+.button2:hover {
+	background-color: #F9A6A6;
+	color: #000;
+}
+
+/* New Content Style */
+#new-content {
+	text-align: center;
+}
+
+#back-button {
+	background-color: #5cef99;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 20px;
+	margin-left: 4vw;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: color 0.4s ease;
+}
+
+#back-button:hover {
+	background-color: #abf4c9;
+	color: #000;
+}
+
+#globe-icon {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+#language-options {
+	position: absolute;
+	bottom: 60px;
+	right: 0;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#language-options button {
+	display: block;
+	width: 100px;
+	margin-bottom: 5px;
+	border-radius: 20px;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+#language-options button:hover {
+	background-color: gray;
+	color: #fff;
+}
