@@ -1,55 +1,8 @@
-// Select elements
 const mainContent = document.getElementById('game-select');
 const newContent = document.getElementById('2d-mode-select');
 const twoDPongButton = document.getElementById('2d-pong-btn');
 const backButton = document.getElementById('back-button');
 const languageButton = document.getElementById('globe-icon');
-
-
-// Function to show the 2D Pong content
-function show2DPongModeSelCont() {
-	// Hide the main content
-	mainContent.style.display = 'none';
-	// Show the new content
-	newContent.style.display = 'block';
-	// Update the URL hash
-	window.location.hash = '#2d-pong';
-}
-
-// Function to go back to the main content
-function showGameSelCont() {
-	newContent.style.display = 'none';
-	mainContent.style.display = 'block';
-	window.location.hash = '#home';
-}
-
-// Event listener for the 2D Pong button
-twoDPongButton.addEventListener('click', show2DPongModeSelCont);
-
-// Event listener for the back button
-backButton.addEventListener('click', showGameSelCont);
-
-// Check the current hash when the page loads or when the hash changes
-function handleHashChange() {
-	if (window.location.hash === '#2d-pong')
-		show2DPongModeSelCont();
-	else if (window.location.hash === '#home')
-		showGameSelCont();
-}
-
-// Check the hash on page load
-window.addEventListener('load', handleHashChange);
-
-// Listen for changes in the hash (when the user clicks the back/forward browser buttons)
-window.addEventListener('hashchange', handleHashChange);
-
-function langSelect() {
-	let languageOptions = document.getElementById('language-options');
-	if (languageOptions.style.display === 'none')
-		languageOptions.style.display = 'block';
-	else
-		languageOptions.style.display = 'none';
-}
 
 const translations = {
 	en: {
@@ -78,11 +31,43 @@ const translations = {
 	}
 };
 
-// 언어를 변경하는 함수
+// Function to show the 2D Pong content
+function show2DPongModeSelCont() {
+	// Hide the main content
+	mainContent.style.display = 'none';
+	// Show the new content
+	newContent.style.display = 'block';
+	// Update the URL hash
+	const currentLang = getCurrentLanguageFromHash();
+	window.location.hash = `#${currentLang}/2d-pong`;
+}
+
+// Function to go back to the main content
+function showGameSelCont() {
+	newContent.style.display = 'none';
+	mainContent.style.display = 'block';
+	const currentLang = getCurrentLanguageFromHash();
+	window.location.hash = `#${currentLang}/home`;
+}
+
+// Event listener for the 2D Pong button
+twoDPongButton.addEventListener('click', show2DPongModeSelCont);
+
+// Event listener for the back button
+backButton.addEventListener('click', showGameSelCont);
+
+// Function to get the current language from the hash
+function getCurrentLanguageFromHash() {
+	const hash = window.location.hash.substring(1);
+	const [lang] = hash.split('/');
+	return translations[lang] ? lang : 'en'; // If the language is not valid, default to 'en'
+}
+
+// Function to update text content based on selected language
 function updateTextContent(selectedLang) {
 	const { welcome, twoDPong, threeDPong, gameModeSel, oneVone, tournament } = translations[selectedLang];
 
-	// 각 텍스트 요소를 업데이트
+	// Update text content
 	document.getElementById('welcome-title').innerText = welcome;
 	document.getElementById('2d-pong').innerText = twoDPong;
 	document.getElementById('3d-pong').innerText = threeDPong;
@@ -90,21 +75,61 @@ function updateTextContent(selectedLang) {
 	document.getElementById('1V1').innerText = oneVone;
 	document.getElementById('tournament').innerText = tournament;
 
-	// 언어 선택 메뉴 숨기기
+	// Hide the language selection menu
 	document.getElementById('language-options').style.display = 'none';
 }
 
-// 이벤트 리스너 추가 함수
+// Function to handle hash changes (when the page loads or the hash changes)
+function handleHashChange() {
+	const hash = window.location.hash.substring(1); // Remove the "#"
+	const [lang, page] = hash.split('/'); // Extract language and page from the hash
+
+	// Update the text content based on the language
+	const selectedLang = translations[lang] ? lang : 'en'; // If the language is not valid, default to 'en'
+	updateTextContent(selectedLang);
+
+	// Navigate to the appropriate page
+	if (page === '2d-pong') {
+		show2DPongModeSelCont();
+	} else {
+		showGameSelCont();
+	}
+}
+
+// Function to toggle the language selection menu
+function langSelect() {
+	let languageOptions = document.getElementById('language-options');
+	if (languageOptions.style.display === 'none')
+		languageOptions.style.display = 'block';
+	else
+		languageOptions.style.display = 'none';
+}
+
+// Function to handle language changes
 function addLanguageChangeListeners() {
 	document.querySelectorAll('.lang-btn').forEach(button => {
 		button.addEventListener('click', () => {
 			const selectedLang = button.getAttribute('data-lang');
+			const currentHash = window.location.hash.substring(1);
+			const [, currentPage] = currentHash.split('/'); // Extract the current page from the hash
+			const page = currentPage || 'home'; // Default to 'home' if no page is found
+
+			// Update the hash with the new language and the current page
+			window.location.hash = `#${selectedLang}/${page}`;
+
+			// Update text content
 			updateTextContent(selectedLang);
 		});
 	});
 }
 
-// 언어 변경 리스너 설정
+// Add language change listeners
 addLanguageChangeListeners();
 
-languageButton.addEventListener('click', langSelect)
+// Handle hash changes
+window.addEventListener('hashchange', handleHashChange);
+
+// Handle page load (check the hash and apply the correct language and page)
+window.addEventListener('load', handleHashChange);
+
+languageButton.addEventListener('click', langSelect);
