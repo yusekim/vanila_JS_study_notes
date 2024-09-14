@@ -1,7 +1,10 @@
 const mainContent = document.getElementById('game-select');
-const newContent = document.getElementById('2d-mode-select');
+const twoDModeSel = document.getElementById('2d-mode-select');
+const threeDModeSel = document.getElementById('3d-mode-select');
 const twoDPongButton = document.getElementById('2d-pong-btn');
-const backButton = document.getElementById('back-button');
+const threeDPongButton = document.getElementById('3d-pong-btn');
+const twoDBackButton = document.getElementById('2d-back-button');
+const threeDBackButton = document.getElementById('3d-back-button');
 const languageButton = document.getElementById('globe-icon');
 
 const translations = {
@@ -33,18 +36,28 @@ const translations = {
 
 // Function to show the 2D Pong content
 function show2DPongModeSelCont() {
-	// Hide the main content
 	mainContent.style.display = 'none';
-	// Show the new content
-	newContent.style.display = 'block';
+	threeDModeSel.style.display = 'none';
+	twoDModeSel.style.display = 'block';
+
 	// Update the URL hash
 	const currentLang = getCurrentLanguageFromHash();
 	window.location.hash = `#${currentLang}/2d-pong`;
 }
 
+function show3DPongModeSelCont() {
+	mainContent.style.display = 'none';
+	twoDModeSel.style.display = 'none';
+	threeDModeSel.style.display = 'block';
+
+	const currentLang = getCurrentLanguageFromHash();
+	window.location.hash = `#${currentLang}/3d-pong`;
+}
+
 // Function to go back to the main content
 function showGameSelCont() {
-	newContent.style.display = 'none';
+	twoDModeSel.style.display = 'none';
+	threeDModeSel.style.display = 'none';
 	mainContent.style.display = 'block';
 	const currentLang = getCurrentLanguageFromHash();
 	window.location.hash = `#${currentLang}/home`;
@@ -53,8 +66,11 @@ function showGameSelCont() {
 // Event listener for the 2D Pong button
 twoDPongButton.addEventListener('click', show2DPongModeSelCont);
 
+threeDPongButton.addEventListener('click', show3DPongModeSelCont);
+
 // Event listener for the back button
-backButton.addEventListener('click', showGameSelCont);
+twoDBackButton.addEventListener('click', showGameSelCont);
+threeDBackButton.addEventListener('click', showGameSelCont);
 
 // Function to get the current language from the hash
 function getCurrentLanguageFromHash() {
@@ -72,8 +88,10 @@ function updateTextContent(selectedLang) {
 	document.getElementById('2d-pong').innerText = twoDPong;
 	document.getElementById('3d-pong').innerText = threeDPong;
 	document.getElementById('2d-mode-select-title').innerText = gameModeSel;
-	document.getElementById('1V1').innerText = oneVone;
-	document.getElementById('tournament').innerText = tournament;
+	document.getElementById('2D-1V1').innerText = oneVone;
+	document.getElementById('3D-1V1').innerText = oneVone;
+	document.getElementById('2D-tournament').innerText = tournament;
+	document.getElementById('3D-tournament').innerText = tournament;
 
 	// Hide the language selection menu
 	document.getElementById('language-options').style.display = 'none';
@@ -89,11 +107,12 @@ function handleHashChange() {
 	updateTextContent(selectedLang);
 
 	// Navigate to the appropriate page
-	if (page === '2d-pong') {
+	if (page === '2d-pong')
 		show2DPongModeSelCont();
-	} else {
+	else if (page === '3d-pong')
+		show3DPongModeSelCont();
+	else
 		showGameSelCont();
-	}
 }
 
 // Function to toggle the language selection menu
