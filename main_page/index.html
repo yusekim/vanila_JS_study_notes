@@ -1,27 +1,32 @@
+<!-- 하나의 섹션당 하나의 SPA 페이지 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pong Pong Valley</title>
-	<link rel="stylesheet" href="new_style.css">
+
+	<link rel="stylesheet" href="css/select-style.css">
+	<link rel="stylesheet" href="css/language-style.css">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
+
 	<section id="game-select">
 		<h1 id="welcome-title" class="title-text">WELCOME TO PONG!</h1>
 		<div class="button-container" style="margin-bottom: 2vw;">
 			<button id="2d-pong-btn" class="button">
-				<img src="./img/2d-pong.png" alt="2d image">
+				<img src="./img//game_select/2d-pong.png" alt="2d image">
 				<span id="2d-pong" class="text">2D Pong</span>
 			</button>
 
 			<button id="3d-pong-btn" class="button2">
-				<img src="./img/3d-pong.png" alt="3d image">
+				<img src="./img/game_select/3d-pong.png" alt="3d image">
 				<span id="3d-pong" class="text">3D Pong</span>
 			</button>
 		</div>
@@ -31,12 +36,12 @@
 		<h1 id="2d-mode-select-title" class="title-text">SELECT YOUR GAME MODE</h1>
 		<div class="button-container">
 			<button id="1V1-btn" class="button">
-				<img src="./img/fist-bump.png">
+				<img src="./img/mode_select/fist-bump.png">
 				<span id="2D-1V1" class="text">1V1</span>
 			</button>
 
 			<button id="tournament-btn" class="button2">
-				<img src="./img/Trophy-icon.png">
+				<img src="./img/mode_select/Trophy-icon.png">
 				<span id="2D-tournament" class="text">Tournament</span>
 			</button>
 		</div>
@@ -47,12 +52,12 @@
 		<h1 id="3d-mode-select-title" class="title-text">SELECT YOUR GAME MODE</h1>
 		<div class="button-container">
 			<button id="1V1-btn" class="button">
-				<img src="./img/3D-fist.png">
+				<img src="./img/mode_select/3D-fist.png">
 				<span id="3D-1V1" class="text">1V1</span>
 			</button>
 
 			<button id="tournament-btn" class="button2">
-				<img src="./img/3D-trophy.png">
+				<img src="./img/mode_select/3D-trophy.png">
 				<span id="3D-tournament" class="text">Tournament</span>
 			</button>
 		</div>
@@ -68,6 +73,9 @@
 		</div>
 	</div>
 
-	<script src="new_script.js"></script>
+	<script src="js/page-change.js"></script>
+	<script src="js/game-select.js"></script>
+	<script src="js/mode-select.js"></script>
+	<script src="js/language-script.js"></script>
 </body>
 </html>
