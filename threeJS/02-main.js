@@ -14,6 +14,8 @@ class App {
 		const scene = new THREE.Scene();
 		this._scene = scene;
 
+		this._vec = new THREE.Vector3(0.05, 0, 0);
+
 		this._setupCamera();
 		this._setupLight();
 		this._setupModel();
@@ -38,7 +40,7 @@ class App {
 			0.1,
 			100
 		);
-		camera.position.z = 2;
+		camera.position.z = 10;
 		this._camera = camera;
 	}
 
@@ -51,15 +53,15 @@ class App {
 	}
 
 	_setupModel() {
-		const geometry = new THREE.BoxGeometry(1, 1, 1);
-		const fillMaterial = new THREE.MeshPhongMaterial({color: 0x515151});
+		const geometry = new THREE.SphereGeometry(1, 8, 6);
+		const fillMaterial = new THREE.MeshPhongMaterial({color: 0xa03030});
 		const cube = new THREE.Mesh(geometry, fillMaterial);
 
-		const lineMaterial = new THREE.LineBasicMaterial({color: 0xffff00});
+		const lineMaterial = new THREE.LineBasicMaterial({color: 0xffffff});
 		const line = new THREE.LineSegments(new THREE.WireframeGeometry(geometry), lineMaterial);
 
 		const group = new THREE.Group();
-		// group.add(cube);
+		group.add(cube);
 		group.add(line);
 
 		this._scene.add(group);
@@ -84,6 +86,12 @@ class App {
 
 	update(time) {
 		time *= 0.001;
+		if (Math.abs(this._cube.position.x) > 5)
+		{
+			console.log(this._cube.position.x)
+			this._vec.x *= -1;
+		}
+		this._cube.position.x += this._vec.x;
 		// this._cube.rotation.x = time;
 		// this._cube.rotation.y = time;
 	}
