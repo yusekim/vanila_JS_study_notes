@@ -1,6 +1,7 @@
 const gameSelPage = document.getElementById('game-select');
 const twoDModeSelPage = document.getElementById('2d-mode-select');
 const threeDModeSelPage = document.getElementById('3d-mode-select');
+const threeDSetting = document.getElementById('setting-3D');
 let ignoreHashChange = false;
 // 해시 변경 시 이벤트 무시 여부를 관리하는 boolean 플래그.
 // 언어를 바꿀때, changeContentPage()함수가 두번씩 호출되는걸 포착해서 이를 막기 위해서 설정.
@@ -12,6 +13,7 @@ function changeContentPage(page) {
 	gameSelPage.style.display = 'none';
 	twoDModeSelPage.style.display = 'none';
 	threeDModeSelPage.style.display = 'none';
+	threeDSetting.style.display = 'none';
 
 	if (document.getElementById(page) === null)
 		page = 'game-select';

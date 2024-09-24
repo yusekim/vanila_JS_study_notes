@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/option-select.css">
+	<script type="module" src="./js/option-select.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body>
+
+	<section id="setting-3D">
+		<div id="webgl-container"></div>
+		<div class="setting-container">
+			<form class="selection" id="ball-speed">
+				<div>Ball speed:</div>
+				<label><input type="radio" name="speed" value="1" required checked> x1</label><br>
+				<label><input type="radio" name="speed" value="2"> x2</label><br>
+			</form>
+
+			<form class="selection" id="ball-color">
+				<div>Ball color:</div>
+				<label style="color: #8A2BE2;"><input type="radio" name="color" value="0" required checked > ⬤ </label><br>
+				<label style="color: #C0C0C0;"><input type="radio" name="color" value="1"> ⬤</label><br>
+				<label style="color: #FF00FF;"><input type="radio" name="color" value="2"> ⬤</label><br>
+			</form>
+			<button type="submit">Let's go!</button>
+		</div>
+	</section>
+
+	<section id="game-app" style="display: none;"></section>
+
+	<section id="result-page" style="display: none;"></section>
+
+</body>
+</html>

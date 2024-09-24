@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="css/select-style.css">
 	<link rel="stylesheet" href="css/language-style.css">
+	<link rel="stylesheet" href="3D-pong/css/option-select.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,12 +36,12 @@
 	<section id="2d-mode-select" style="display: none;">
 		<h1 id="2d-mode-select-title" class="title-text">SELECT YOUR GAME MODE</h1>
 		<div class="button-container">
-			<button id="1V1-btn" class="button">
+			<button id="two-1V1-btn" class="button">
 				<img src="./img/mode_select/fist-bump.png">
 				<span id="2D-1V1" class="text">1V1</span>
 			</button>
 
-			<button id="tournament-btn" class="button2">
+			<button id="two-tournament-btn" class="button2">
 				<img src="./img/mode_select/Trophy-icon.png">
 				<span id="2D-tournament" class="text">Tournament</span>
 			</button>
@@ -51,18 +52,38 @@
 	<section id="3d-mode-select" style="display: none;">
 		<h1 id="3d-mode-select-title" class="title-text">SELECT YOUR GAME MODE</h1>
 		<div class="button-container">
-			<button id="1V1-btn" class="button">
+			<button id="three-1V1-btn" class="button">
 				<img src="./img/mode_select/3D-fist.png">
 				<span id="3D-1V1" class="text">1V1</span>
 			</button>
 
-			<button id="tournament-btn" class="button2">
+			<button id="three-tournament-btn" class="button2">
 				<img src="./img/mode_select/3D-trophy.png">
 				<span id="3D-tournament" class="text">Tournament</span>
 			</button>
 		</div>
 		<button class="back-button" id="3d-back-button">Go Back</button>
 	</section>
+
+	<section id="setting-3D" style="display: none;">
+		<div id="webgl-container"></div>
+		<div class="setting-container">
+			<form class="selection" id="ball-speed">
+				<div>Ball speed:</div>
+				<label><input type="radio" name="speed" value="1" required checked> x1</label><br>
+				<label><input type="radio" name="speed" value="2"> x2</label><br>
+			</form>
+
+			<form class="selection" id="ball-color">
+				<div>Ball color:</div>
+				<label style="color: #8A2BE2;"><input type="radio" name="color" value="0" required checked > ⬤ </label><br>
+				<label style="color: #C0C0C0;"><input type="radio" name="color" value="1"> ⬤</label><br>
+				<label style="color: #FF00FF;"><input type="radio" name="color" value="2"> ⬤</label><br>
+			</form>
+			<button type="submit">Let's go!</button>
+		</div>
+	</section>
+
 
 	<div>
 		<img id="globe-icon" src="./img/globe-icon.png" alt="language-icon">
@@ -77,5 +98,6 @@
 	<script src="js/game-select.js"></script>
 	<script src="js/mode-select.js"></script>
 	<script src="js/language-script.js"></script>
+	<script type="module" src="3D-pong/js/option-select.js"></script>
 </body>
 </html>
