@@ -13,7 +13,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 0;
+	margin-top: 200px;
 	margin-bottom: 2vw;
 	letter-spacing: 4px;
 	font-size: clamp(48px, 5vw, 80px); /* 최소 16px, 기본 화면 너비의 5%, 최대 48px */
