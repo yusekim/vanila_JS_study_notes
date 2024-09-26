@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pong Pong Valley</title>
 
-	<link rel="stylesheet" href="css/select-style.css">
-	<link rel="stylesheet" href="css/language-style.css">
-	<link rel="stylesheet" href="3D-pong/css/option-select.css">
+	<link rel="stylesheet" href="css/page/select-style.css">
+	<link rel="stylesheet" href="css/page/language-style.css">
+	<link rel="stylesheet" href="css/3Dpong/option-select.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,10 +80,10 @@
 				<label style="color: #C0C0C0;"><input type="radio" name="color" value="1"> ⬤</label><br>
 				<label style="color: #FF00FF;"><input type="radio" name="color" value="2"> ⬤</label><br>
 			</form>
-			<button type="submit">Let's go!</button>
+			<button class="back-button" id="game-start">Let's go!</button>
+			<button class="back-button" id="3d-back-button">Go Back</button>
 		</div>
 	</section>
-
 
 	<div>
 		<img id="globe-icon" src="./img/globe-icon.png" alt="language-icon">
@@ -94,10 +94,10 @@
 		</div>
 	</div>
 
-	<script src="js/page-change.js"></script>
-	<script src="js/game-select.js"></script>
-	<script src="js/mode-select.js"></script>
-	<script src="js/language-script.js"></script>
-	<script type="module" src="3D-pong/js/option-select.js"></script>
+	<script type="module" src="js/3Dpong/option-select.js"></script>
+	<script type="module" src="js/page/page-change.js"></script>
+	<script type="module" src="js/page/mode-select.js"></script>
+	<script type="module" src="js/page/game-select.js"></script>
+	<script src="js/page/language-script.js"></script>
 </body>
 </html>

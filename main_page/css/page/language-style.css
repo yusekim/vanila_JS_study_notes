@@ -1,0 +1,30 @@
+
+#globe-icon {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+#language-options {
+	position: absolute;
+	bottom: 60px;
+	right: 0;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#language-options button {
+	display: block;
+	width: 100px;
+	margin-bottom: 5px;
+	border-radius: 20px;
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+#language-options button:hover {
+	background-color: gray;
+	color: #fff;
+}
