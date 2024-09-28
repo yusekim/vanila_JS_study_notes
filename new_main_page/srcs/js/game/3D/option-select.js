@@ -53,7 +53,7 @@ export class App {
 		// 애니메이션 관련 변수
 		this._animationId = null;
 	}
-	
+
 	dispose() {
 		// 애니메이션 루프 종료
 		if (this._animationId) {
@@ -128,7 +128,7 @@ export class App {
 		// 공의 위치 이동
 		if (Math.abs(this._ball.position.x) > 14) this._vec.x *= -1;
 		if (Math.abs(this._ball.position.y) > 9) this._vec.y *= -1;
-		if (Math.abs(this._ball.position.z) > 9) this._vec.z *= -1;
+		if (Math.abs(this._ball.position.z) > 11.5) this._vec.z *= -1;
 
 		this._ballWire.rotation.z -= this._randomRot;
 		this._ball.position.x += this._vec.x;
@@ -177,7 +177,7 @@ export class App {
 		const geoWireCol = new THREE.LineSegments(geoWire, WireMaterial);
 		const ball = new THREE.Mesh(geometry, fillMaterial);
 
-		const ballPosX = new THREE.PlaneGeometry(20, 20);
+		const ballPosX = new THREE.PlaneGeometry(25, 20);
 		const ballPosXEdge = new THREE.EdgesGeometry(ballPosX);
 		const ballPosXEdgeMat = new THREE.LineBasicMaterial({ color: 0x00FFFF });
 		const ballPosXWire = new THREE.LineSegments(ballPosXEdge, ballPosXEdgeMat);
@@ -188,7 +188,7 @@ export class App {
 		const ballPosZEdgeMat = new THREE.LineBasicMaterial({ color: 0xFF1493 });
 		const ballPosZWire = new THREE.LineSegments(ballPosZEdge, ballPosZEdgeMat);
 
-		const room = new THREE.BoxGeometry(30, 20, 20);
+		const room = new THREE.BoxGeometry(30, 20, 25);
 		const wireframeGeometry = new THREE.EdgesGeometry(room);
 		const wireframeMaterial = new THREE.LineBasicMaterial({ color: 0x39FF14 });
 		const wireframeCube = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);

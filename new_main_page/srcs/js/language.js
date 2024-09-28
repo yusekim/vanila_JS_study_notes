@@ -13,6 +13,8 @@ export const languages = {
 		threeDBallCol: "Ball color",
 		threeDStart: "Let's go!",
 		goBack: "Back",
+		threeDEasy: "Easy",
+		threeDHard: "Hard",
 	},
 	ko: {
 		welcome: "PONG에 오신 것을 환영합니다!",
@@ -25,6 +27,8 @@ export const languages = {
 		threeDBallCol: "공의 색깔",
 		threeDStart: "게임 시작!",
 		goBack: "뒤로가기",
+		threeDEasy: "쉬움",
+		threeDHard: "어려움",
 	},
 	ja: {
 		welcome: "PONGへようこそ!",
@@ -37,6 +41,8 @@ export const languages = {
 		threeDBallCol: "色",
 		threeDStart: "ゲームスタート!",
 		goBack: "前のページへ",
+		threeDEasy: "普通",
+		threeDHard: "速い",
 	}
 };
 

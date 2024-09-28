@@ -11,8 +11,8 @@ export function threeDSetting(currentLanguage) {
 	<div class="setting-container">
 		<form class="selection" id="ball-speed">
 			<div>${languages[currentLanguage].threeDBallSpd}:</div>
-			<label><input type="radio" name="speed" value="1" required checked> x1</label><br>
-			<label><input type="radio" name="speed" value="2"> x2</label><br>
+			<label><input type="radio" name="speed" value="1" required checked> ${languages[currentLanguage].threeDEasy}</label><br>
+			<label><input type="radio" name="speed" value="1.5"> ${languages[currentLanguage].threeDHard}</label><br>
 		</form>
 
 		<form class="selection" id="ball-color">
